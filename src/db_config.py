@@ -26,7 +26,8 @@ def get_db_connection():
             host=DB_HOST,
             database=DB_NAME,
             user=DB_USER,
-            password=DB_PASS
+            password=DB_PASS,
+            sslmode="require"
         )
         logging.info("✅ Connected to PostgreSQL")
 

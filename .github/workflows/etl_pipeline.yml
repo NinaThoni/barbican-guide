@@ -23,10 +23,10 @@ jobs:
 
       - name: Set environment variables
         env:
-          DB_HOST: ${{ secrets.DB_HOST }}
-          DB_NAME: ${{ secrets.DB_NAME }}
-          DB_USER: ${{ secrets.DB_USER }}
-          DB_PASS: ${{ secrets.DB_PASS }}
+            DB_HOST: ${{ vars.DB_HOST }}
+            DB_NAME: ${{ vars.DB_NAME }}
+            DB_USER: ${{ vars.DB_USER }}
+            DB_PASS: ${{ secrets.DB_PASS }}
         run: echo "✅ Environment variables set."
 
       - name: Run ETL pipeline
