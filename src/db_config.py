@@ -62,11 +62,6 @@ DB_USER = os.getenv("DB_USER")
 DB_PASS = os.getenv("DB_PASS")
 DB_PORT = os.getenv("DB_PORT", "5432")  # Default to 5432 if not set
 
-# ✅ Validate environment variables BEFORE connecting
-if not DB_HOST or DB_HOST.lower() in ["localhost", "127.0.0.1"]:
-    logging.error("❌ ERROR: DB_HOST is set to localhost! This script should connect to Azure PostgreSQL.")
-    exit(1)
-
 
 def get_db_connection():
     """Establish connection to Azure PostgreSQL with SSL."""

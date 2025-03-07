@@ -90,7 +90,4 @@ def extract_events():
 
     return all_events_df, unique_events_df
 
-# Run extraction
-all_events_df, unique_events_df = extract_events()
 
-print(all_events_df)
