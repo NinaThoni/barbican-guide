@@ -42,7 +42,7 @@ def run_pipeline():
         sys.exit(1)  
 
     try:
-        insert_events(cleaned_events_df, conn)
+        insert_events(cleaned_events_df)
         logging.info("🎉 Data successfully inserted into PostgreSQL!")
     except Exception as e:
         logging.error(f"❌ Data loading failed: {e}")
