@@ -67,11 +67,6 @@ if not DB_HOST or DB_HOST.lower() in ["localhost", "127.0.0.1"]:
     logging.error("❌ ERROR: DB_HOST is set to localhost! This script should connect to Azure PostgreSQL.")
     exit(1)
 
-logging.info(f"🔍 Using database connection settings:")
-logging.info(f"    DB_HOST={DB_HOST}")
-logging.info(f"    DB_NAME={DB_NAME}")
-logging.info(f"    DB_USER={DB_USER}")
-logging.info(f"    DB_PORT={DB_PORT}")
 
 def get_db_connection():
     """Establish connection to Azure PostgreSQL with SSL."""
