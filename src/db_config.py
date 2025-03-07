@@ -29,6 +29,7 @@ def get_db_connection():
             database=DB_NAME,
             user=DB_USER,
             password=DB_PASS,
+            port=5432,
             sslmode="require"
         )
         logging.info("✅ Connected to PostgreSQL")
