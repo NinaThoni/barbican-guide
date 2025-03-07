@@ -23,9 +23,9 @@ jobs:
 
       - name: Set environment variables
         env:
-            DB_HOST: ${{ secrets.DB_HOST }}
-            DB_NAME: ${{ secrets.DB_NAME }}
-            DB_USER: ${{ secrets.DB_USER }}
+            DB_HOST: barbican-server.postgres.database.azure.com
+            DB_NAME: postgres
+            DB_USER: ninathoni
             DB_PASS: ${{ secrets.DB_PASS }}
         run: echo "✅ Environment variables set."
 
@@ -34,7 +34,7 @@ jobs:
 
       - name: Test PostgreSQL Connection
         run: |
-          PGPASSWORD="${{ secrets.DB_PASS }}" psql -h "${{ secrets.DB_HOST }}" -p 5432 -U "${{ secrets.DB_USER }}" -d "${{ secrets.DB_NAME }}" -c "SELECT version();"
+          PGPASSWORD="${{ secrets.DB_PASS }}" psql -h "barbican-server.postgres.database.azure.com" -p 5432 -U "ninathoni" -d "postgres" -c "SELECT version();"
 
 
       - name: Run ETL pipeline
