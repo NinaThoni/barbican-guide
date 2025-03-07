@@ -20,7 +20,9 @@ DB_USER = os.getenv("DB_USER")
 DB_PASS = os.getenv("DB_PASS")
 
 def get_db_connection():
-    """Establish connection to Azure PostgreSQL."""
+    """Establish connection to Azure PostgreSQL with SSL."""
+    logging.info(f"🔍 Attempting connection to: {os.getenv('DB_HOST')}:{os.getenv('DB_PORT')}")
+    
     try:
         conn = psycopg2.connect(
             host=DB_HOST,
