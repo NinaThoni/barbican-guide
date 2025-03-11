@@ -38,7 +38,7 @@ def run_pipeline():
     logging.info("📌 Loading events into PostgreSQL...")
     conn = get_db_connection()
     if not conn:
-        logging.error("❌ Database connection failed.")
+        logging.error("❌ Database connection failed.") 
         sys.exit(1)  
 
     try:
