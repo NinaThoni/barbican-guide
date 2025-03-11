@@ -8,7 +8,7 @@ from etl_pipeline import run_pipeline  # Import your ETL script
 app = func.FunctionApp()  # This is required for Azure Functions v4
 
 @app.function_name(name="barbican_etl_pipeline")  # Define function name
-@app.schedule(schedule="0 0 * * * *", arg_name="mytimer", run_on_startup=True,
+@app.schedule(schedule="0 6 * * * *", arg_name="mytimer", run_on_startup=True,
               use_monitor=False)  # Runs daily at midnight
 def barbican_etl_pipeline(mytimer: func.TimerRequest) -> None:
     logging.info("🔄 Starting Barbican ETL pipeline...")
