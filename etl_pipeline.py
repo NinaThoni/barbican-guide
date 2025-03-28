@@ -36,19 +36,13 @@ def run_pipeline():
 
 # ✅ Step 3: Load (Insert into PostgreSQL)
     logging.info("📌 Loading events into PostgreSQL...")
-    conn = get_db_connection()
-    if not conn:
-        logging.error("❌ Database connection failed.") 
-        sys.exit(1)  
-
     try:
         insert_events(cleaned_events_df)
         logging.info("🎉 Data successfully inserted into PostgreSQL!")
     except Exception as e:
         logging.error(f"❌ Data loading failed: {e}")
         sys.exit(1)  
-    finally:
-        conn.close()
+
 
 if __name__ == "__main__":
     run_pipeline()
