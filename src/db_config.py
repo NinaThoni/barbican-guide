@@ -28,7 +28,8 @@ def get_db_connection():
 
         return conn
     except Exception as e:
-        logging.error("❌ Connection failed", exc_info=True)
-        return None
+        print("❌ Connection failed")
+        print("🔍 DB_HOST:", os.environ.get("DB_HOST", "MISSING"))
+        raise e
 
 
