@@ -16,17 +16,17 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
-          python-version: "3.9"
+          python-version: "3.10"
 
       - name: Install dependencies
         run: pip install -r requirements.txt
 
       - name: Set environment variables
         env:
-          DB_HOST: barbican-server.postgres.database.azure.com
-          DB_NAME: postgres
-          DB_USER: ninathoni
-          DB_PORT: 5432
+          env:
+          DB_HOST: ${{ secrets.DB_HOST }}
+          DB_NAME: ${{ secrets.DB_NAME }}
+          DB_USER: ${{ secrets.DB_USER }}
           DB_PASS: ${{ secrets.DB_PASS }}
 
         run: echo "✅ Environment variables set."
