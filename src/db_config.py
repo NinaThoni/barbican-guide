@@ -15,7 +15,6 @@ load_dotenv()
 
 def get_db_connection():
     """Establish connection to Azure PostgreSQL with SSL."""
-    logging.info(f"🔍 Attempting connection to: {os.environ["DB_HOST"]}")
     
     try:
         conn = psycopg2.connect(
