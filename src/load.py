@@ -21,6 +21,7 @@ def insert_events(events_df):
     insert_query = """
     INSERT INTO barbican_events (title, description, category, price, event_date, url)
     VALUES (%s, %s, %s, %s, %s, %s)
+    ON CONFLICT DO NOTHING;
     """
 
     try:
