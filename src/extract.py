@@ -91,3 +91,8 @@ def extract_events():
     return all_events_df, unique_events_df
 
 
+if __name__ == "__main__":
+    events = extract_events()
+    print(events)
+
+
