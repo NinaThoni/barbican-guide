@@ -43,6 +43,11 @@ jobs:
         run: |
           PGPASSWORD="${{ secrets.DB_PASS }}" psql -h "barbican-server.postgres.database.azure.com" -p 5432 -U "ninathoni" -d "postgres" -c "SELECT version();"
 
-
-      - name: Run ETL pipeline
+      - name: 🚀 Run ETL Pipeline
         run: python etl_pipeline.py
+        env:
+          DB_HOST: ${{ secrets.DB_HOST }}
+          DB_NAME: ${{ secrets.DB_NAME }}
+          DB_USER: ${{ secrets.DB_USER }}
+          DB_PASS: ${{ secrets.DB_PASS }}
+
